@@ -1,7 +1,4 @@
 # SpotiCry
-SpotiCry: An emotional tracking web app inspired by Spotify's year-in-review feature, focusing on logging and visualizing crying episodes.
-
-# SpotiCry
 
 SpotiCry is an emotional tracking web application that focuses on logging and analyzing crying episodes. Inspired by Spotify's year-in-review feature, it provides users with personalized reports and visualizations of their emotional patterns.
 
