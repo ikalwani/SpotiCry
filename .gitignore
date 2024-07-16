@@ -1,0 +1,6 @@
+env/
+__pycache__/
+*.py[cod]
+secret-key/key.json
+.DS_Store
+*.log
