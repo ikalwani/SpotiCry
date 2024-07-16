@@ -132,6 +132,7 @@ if __name__ == "__main__":
     
     # schedule sript for every one hour (testing stage - every minute)
     schedule.every().minute.do(main)
+
     while True:
         schedule.run_pending()
         time.sleep(1)
