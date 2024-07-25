@@ -4,3 +4,5 @@ __pycache__/
 secret-key/key.json
 .DS_Store
 *.log
+
+.secret-key
