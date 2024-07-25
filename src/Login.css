@@ -32,14 +32,14 @@
     padding: 10px;
     border: none;
     border-radius: 4px;
-    background-color: #2a6cb4;
+    background-color: #8d0404;
     color: white;
     cursor: pointer;
     font-size: 16px;
 }
 
 .login-form button:hover {
-    background-color: #173a60;
+    background-color: #e67b71;
 }
 
 .google-signin {
@@ -50,7 +50,7 @@
     color: white;
     cursor: pointer;
     font-size: 16px;
-    margin-top: 10px;
+    margin-top: 30px;
 }
 
 .google-signin:hover {
@@ -63,7 +63,7 @@
 }
 
 .auth-options a {
-    color: #007bff;
+    color: #8B0000;
     text-decoration: none;
     font-size: 16px;
 }

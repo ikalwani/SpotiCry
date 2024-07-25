@@ -10,8 +10,6 @@ const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Authentication logic here
-    // Example: if successful, navigate to dashboard
     navigate("/dashboard");
   };
 

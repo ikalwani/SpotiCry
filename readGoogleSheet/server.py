@@ -1,6 +1,13 @@
 from flask import Flask, send_from_directory, jsonify
 
-app = Flask(__name__, static_folder='../client/build', static_url_path='')
+# using flask instead for authentication
+# after loggin in-> server sets cookie called session id 
+# this session id will refer to the session that u opened at login 
+# server will check for any session which refers to the session id 
+# if there is a session w that ID, u are authetincated 
+
+
+app = Flask(__name__)
 
 @app.route('/')
 def serve():
