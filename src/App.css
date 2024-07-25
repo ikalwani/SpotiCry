@@ -1,0 +1,120 @@
+.App {
+  text-align: center;
+  background-color: #FFE4E1;
+  min-height: 90vh;
+  color: #8B0000;
+}
+
+.App-header {
+  background-color: #FFE4E1;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(5px + 2vmin);
+  color: #8B0000;
+  padding: 20px;
+}
+
+.App-logo {
+  height: 40vmin;
+  width: 65vmin;;
+  pointer-events: none;
+  margin-bottom: 2rem;
+  padding-top: 70px;
+}
+
+.App-description {
+  max-width: 800px;
+  margin: 20px auto;
+  line-height: 1.6;
+  font-size: 18px;
+  text-align: center;
+  color: black;
+  font-weight: 650;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.visible {
+  opacity: 2;
+  transform: translateY(0);
+}
+
+.fade-in:not(.visible) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.App-features {
+  list-style-type: none;
+  padding: 0;
+  margin: 20px 0;
+}
+
+.App-features li {
+  background-color: #e46b74;
+  color: white;
+  margin: 10px 0;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  transition: transform 0.3s ease;
+}
+
+.App-features li:hover {
+  transform: scale(1.05);
+  background-color: #e98e8e;
+}
+
+.App-motto {
+  font-style: italic;
+  font-size: 20px;
+  margin: 20px 0;
+}
+
+.App-button {
+  background-color: #272727;
+  color: rgb(252, 247, 247);
+  border: none;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 20px 2px;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: background-color 0.3s;
+}
+
+.App-button:hover {
+  background-color: #7f7c7c;
+}
+.App-logo {
+  animation: App-logo-spin infinite 20s linear;
+}
+
+.fade-in {
+  opacity: 0;
+  transition: opacity 1s ease-in;
+}
+
+.visible {
+  opacity: 1;
+}
+
+/* App-header background animation */
+.App-header {
+  animation: gradientAnimation 10s ease infinite;
+}
+
+
+.App-link {
+  color: #61dafb;
+}
