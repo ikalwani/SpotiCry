@@ -5,6 +5,7 @@ import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
 import Login from "./Login";
 import AnimatedCircles from "./AnimatedCircles";
+import Dashboard from "./Dashboard";
 
 function Home() {
   const [message, setMessage] = useState("");
@@ -104,6 +105,7 @@ function App() {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/login" element={<Login />} />
+      <Route path="/dashboard" element={<Dashboard />} />
     </Routes>
   );
 }

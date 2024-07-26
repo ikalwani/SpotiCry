@@ -1,0 +1,105 @@
+.dashboard-container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background: #fce4e4;
+    font-family: 'Arial', sans-serif;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 15px;
+    background: #ffffff;
+    border-bottom: 2px solid #ddd;
+}
+
+.header-item {
+    cursor: pointer;
+    padding: 10px 20px;
+    color: #000;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.header-item:hover {
+    background-color: #f8d7da;
+    color: #c82333;
+}
+
+.dashboard-main {
+    flex: 1;
+    padding: 30px;
+    text-align: center;
+    color: #333;
+    font-size: medium;
+    font-weight: 60px;
+}
+
+.form-button {
+    background-color: #f8a5a5;
+    /* Light pink button background */
+    color: #fff;
+    border: none;
+    padding: 12px 25px;
+    margin-bottom: 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+.form-button:hover {
+    background-color: #f67280;
+    /* Darker pink on hover */
+}
+
+.google-form-container {
+    margin-top: 20px;
+}
+
+.dashboard-footer {
+    padding: 10px;
+    background: #ffffff;
+    /* White background for footer */
+    border-top: 2px solid #ddd;
+    /* Light grey border */
+    text-align: center;
+    font-size: 14px;
+}
+
+.logout-button {
+    background-color: #f67280;
+    /* Dark pink background for logout */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+.logout-button:hover {
+    background-color: #c82333;
+    /* Darker pink on hover */
+}
+
+/* Fade-in animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.fade-in {
+    animation: fadeIn 1s ease-out;
+}
