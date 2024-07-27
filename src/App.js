@@ -3,11 +3,11 @@ import React, { useState, useEffect, useRef } from "react";
 import logo from "./spoticry.png";
 import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
-import Login from "./Login";
 import AnimatedCircles from "./AnimatedCircles";
 import Dashboard from "./Dashboard";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./Components/LoginButton.js";
+import Visualize from "./Visualize";
 
 function Home() {
   const [message, setMessage] = useState("");
@@ -99,8 +99,8 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/login" element={<Login />} />
       <Route path="/dashboard" element={<Dashboard />} />
+      <Route path="/visualize" element={<Visualize />} />
     </Routes>
   );
 }

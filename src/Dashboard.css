@@ -21,6 +21,7 @@
     color: #000;
     font-weight: bold;
     transition: background-color 0.3s;
+    background-color: #f8d7da;
 }
 
 .header-item:hover {
@@ -177,7 +178,6 @@
 .google-form-container {
     position: relative;
     padding-top: 56.25%;
-    /* Aspect ratio 16:9 */
     height: 0;
     overflow: hidden;
     max-width: 100%;
