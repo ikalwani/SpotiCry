@@ -1,13 +1,16 @@
+// src/Dashboard.js
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import "./Dashboard.css";
+import { useAuth0 } from "@auth0/auth0-react";
+import LogoutButton from "./Components/LogoutButton"; 
+import Profile from "./Components/Profile";
 
 const Dashboard = () => {
   const navigate = useNavigate();
+  const { isAuthenticated } = useAuth0();
 
-  const handleLogout = () => {
-    navigate("/");
-  };
+  console.log("isAuthenticated:", isAuthenticated);
 
   return (
     <div className="dashboard-container">
@@ -18,9 +21,11 @@ const Dashboard = () => {
         <div className="header-item" onClick={() => navigate("/visualize")}>
           Visualize
         </div>
-        <button className="logout-button-header" onClick={handleLogout}>
-          Logout
-        </button>
+        {isAuthenticated ? (
+          <LogoutButton className="logout-button-header" />
+        ) : (
+          <p>Not authenticated</p> // Debugging statement
+        )}
       </header>
 
       <main className="dashboard-main">

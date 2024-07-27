@@ -6,18 +6,14 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import Login from "./Login";
 import AnimatedCircles from "./AnimatedCircles";
 import Dashboard from "./Dashboard";
+import { useAuth0 } from "@auth0/auth0-react";
+import LoginButton from "./Components/LoginButton.js";
 
 function Home() {
   const [message, setMessage] = useState("");
   const elementsRef = useRef([]);
-  const navigate = useNavigate(); 
-
-  useEffect(() => {
-    fetch("/api/hello")
-      .then((response) => response.json())
-      .then((data) => setMessage(data.message))
-      .catch((error) => console.error("Error:", error));
-  }, []);
+  const navigate = useNavigate();
+  const { loginWithRedirect, isAuthenticated } = useAuth0();
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -87,13 +83,12 @@ function Home() {
           Remember, it's okay to cry. Let's turn those tears into self-discovery
           and growth.
         </p>
-        <button
-          className="App-button fade-in"
-          ref={(el) => (elementsRef.current[5] = el)}
-          onClick={() => navigate("/login")} 
-        >
-          Get Started
-        </button>
+        {!isAuthenticated && (
+          <LoginButton
+            className="App-button"
+            refElement={(el) => (elementsRef.current[5] = el)}
+          />
+        )}
         {message && <p className="fade-in">{message}</p>}
       </header>
     </div>

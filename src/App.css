@@ -90,6 +90,7 @@
   cursor: pointer;
   border-radius: 12px;
   transition: background-color 0.3s;
+  z-index: 1000;
 }
 
 .App-button:hover {

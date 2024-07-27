@@ -6,3 +6,4 @@ secret-key/key.json
 *.log
 
 secret-key/
+.env
