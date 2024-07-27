@@ -27,11 +27,11 @@ const Dashboard = () => {
           <p>Not authenticated</p> // Debugging statement
         )}
 
-        {isAuthenticated ? (
+        {/* {isAuthenticated ? (
           <Profile className="logout-button-header" />
         ) : (
           <p>Not authenticated</p> // Debugging statement
-        )}
+        )} */}
       </header>
 
       <main className="dashboard-main">

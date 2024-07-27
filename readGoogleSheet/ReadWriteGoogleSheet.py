@@ -81,7 +81,41 @@ try:
 except Exception as e:
     print(e)
 
+# def save_to_mongodb(entry):
+
 def save_to_mongodb(entry):
+    try:
+        db = client["spoticry"]
+        users_collection = db["users"]
+        
+        email = entry['email']
+        del entry['email']
+        entry_id = {"timestamp": entry['timestamp'], "date": entry['date'], "intensity": entry['intensity'], "trigger": entry['trigger'], "location": entry['location']}
+        
+        existing_entry = users_collection.find_one({"email": email, "entries": {"$elemMatch": entry_id}})
+        
+        if not existing_entry:
+            entry['_id'] = ObjectId()
+            result = users_collection.update_one(
+                {"email": email},
+                {
+                    "$setOnInsert": {"email": email},
+                    "$push": {"entries": entry}
+                },
+                upsert=True
+            )
+            if result.upserted_id:
+                print(f"Created new user with id: {result.upserted_id}")
+            else:
+                print(f"Added entry to existing user with email: {email}")
+            return True
+        else:
+            print(f"Duplicate entry found for user with email: {email}")
+            return False
+    except Exception as e:
+        logging.error(f"Error saving to MongoDB: {str(e)}")
+        return False
+
     try:
         db = client["spoticry"]
         users_collection = db["users"]
