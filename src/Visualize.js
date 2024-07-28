@@ -66,11 +66,6 @@ const Visualize = () => {
           <p>Not authenticated</p> // Debugging statement
         )}
 
-        {/* {isAuthenticated ? (
-          <Profile className="logout-button-header" />
-        ) : (
-          <p>Not authenticated</p> // Debugging statement
-        )} */}
       </header>
       <h2>Your Emotional Journey Visualization</h2>
       {userData ? (
