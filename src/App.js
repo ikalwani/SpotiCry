@@ -102,6 +102,7 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/visualize" element={<Visualize />} />
     </Routes>
+    
   );
 }
 
