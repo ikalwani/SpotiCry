@@ -318,6 +318,9 @@ const Visualize = () => {
           </div>
         )}
       </div>
+      <footer className="dashboard-footer">
+        <p>&copy; 2024 SpotiCry. All rights reserved.</p>
+      </footer>
     </div>
   );
 };
