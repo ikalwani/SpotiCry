@@ -1,0 +1,192 @@
+
+.visualize-container {
+    text-align: center;
+    background-color: #FFE4E1;
+    min-height: 90vh;
+    color: #8B0000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.spoticry-content {
+    background-color: #FFE4E1;
+    color: #8B0000;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.spoticry-header {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.spoticry-header h1 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+}
+
+.spoticry-header p {
+    font-size: 1.23em;
+    margin-bottom: 20px;
+    margin-left:10px;
+    margin-right:10px;
+}
+
+.spoticry-insight-section {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.spoticry-insight-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+
+.spoticry-insight {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+
+.spoticry-insight-button {
+    background-color: #8B0000;
+    color: #FFE4E1;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: background-color 0.3s;
+    margin-bottom: 20px;
+    align-self: center;
+}
+
+.spoticry-insight-button:hover {
+    background-color: #7f7c7c;
+}
+
+.spoticry-charts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.spoticry-chart {
+    background-color: #FFE4E1;
+    color: #8B0000;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+.spoticry-chart-title {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 768px) {
+    .spoticry-header h1 {
+        font-size: 1.6em;
+    }
+
+    .spoticry-header p {
+        font-size: 1.1em;
+    }
+
+    .spoticry-insight-title {
+        font-size: 1.2em;
+    }
+
+    .spoticry-insight {
+        font-size: 1em;
+    }
+
+    .spoticry-insight-button {
+        padding: 8px 16px;
+        font-size: 0.9em;
+    }
+
+    .spoticry-chart {
+        width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .spoticry-header h1 {
+        font-size: 1.4em;
+    }
+
+    .spoticry-header p {
+        font-size: 1em;
+    }
+
+    .spoticry-insight-title {
+        font-size: 1em;
+    }
+
+    .spoticry-insight {
+        font-size: 0.9em;
+    }
+
+    .spoticry-insight-button {
+        padding: 6px 12px;
+        font-size: 0.8em;
+    }
+
+    .spoticry-chart {
+        width: 100%;
+    }
+}
+
+.no-data-message {
+    background-color: #FFE4E1;
+    color: #8B0000;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 80%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+@media (max-width: 768px) {
+    .no-data-message {
+        font-size: 1.1em;
+        padding: 15px;
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .no-data-message {
+        font-size: 1em;
+        padding: 10px;
+        max-width: 95%;
+    }
+}

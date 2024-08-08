@@ -1,5 +1,6 @@
 // src/App.js
-import React, { useState, useEffect, useRef } from "react";
+import React from "react";
+import { useState, useEffect, useRef } from "react";
 import logo from "./spoticry.png";
 import "./App.css";
 import { Routes, Route, useNavigate } from "react-router-dom";
@@ -102,7 +103,6 @@ function App() {
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/visualize" element={<Visualize />} />
     </Routes>
-    
   );
 }
 
