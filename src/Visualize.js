@@ -18,7 +18,7 @@ import {
 } from "chart.js";
 import { Pie, Line, Bar } from "react-chartjs-2";
 import { motion } from "framer-motion";
-import "chartjs-adapter-date-fns"; 
+import "chartjs-adapter-date-fns";
 
 ChartJS.register(
   ArcElement,
@@ -30,7 +30,7 @@ ChartJS.register(
   LineElement,
   Title,
   BarElement,
-  TimeScale 
+  TimeScale
 );
 
 const Visualize = () => {
@@ -45,32 +45,20 @@ const Visualize = () => {
     }
   }, [isAuthenticated, user]);
 
-const fetchUserData = async (email) => {
-  try {
-    const response = await fetch(`/api/user-data?email=${email}`);
-    if (!response.ok) {
-      const text = await response.text();
-      console.error("Server responded with an error:", response.status, text);
-      throw new Error(`HTTP error! status: ${response.status}`);
+  const fetchUserData = async (email) => {
+    try {
+      const response = await fetch(`/api/user-data?email=${email}`);
+      if (!response.ok) {
+        const text = await response.text();
+        console.error("Server responded with an error:", response.status, text);
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+      const data = await response.json();
+      setUserData(data);
+    } catch (error) {
+      console.error("Error fetching data:", error);
     }
-    const data = await response.json();
-    const uniqueData = data.filter(
-      (entry, index, self) =>
-        index ===
-        self.findIndex(
-          (e) =>
-            e.timestamp === entry.timestamp &&
-            e.date === entry.date &&
-            e.intensity === entry.intensity &&
-            e.trigger.toString() === entry.trigger.toString() &&
-            e.location === entry.location
-        )
-    );
-    setUserData(uniqueData);
-  } catch (error) {
-    console.error("Error fetching data:", error);
-  }
-};
+  };
 
   const prepareChartData = () => {
     if (!userData) return null;

@@ -36,9 +36,10 @@ app.get("/api/user-data", async (req, res) => {
     }
   } catch (error) {
     console.error("Error in /api/user-data:", error);
-    res
-      .status(500)
-      .json({ message: "Error fetching user data", error: error.toString() });
+    res.status(500).json({
+      message: "Error fetching user data",
+      error: error.toString(),
+    });
   } finally {
     await client.close();
   }
