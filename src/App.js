@@ -47,6 +47,14 @@ function Home() {
     };
   }, []);
 
+  const handleGetStartedClick = () => {
+    if (isAuthenticated) {
+      navigate("/dashboard");
+    } else {
+      loginWithRedirect();
+    }
+  };
+
   return (
     <div className="App">
       <AnimatedCircles />
@@ -84,17 +92,19 @@ function Home() {
           Remember, it's okay to cry. Let's turn those tears into self-discovery
           and growth.
         </p>
-        {!isAuthenticated && (
-          <LoginButton
-            className="App-button"
-            refElement={(el) => (elementsRef.current[5] = el)}
-          />
-        )}
+        <button
+          className="App-button"
+          onClick={handleGetStartedClick}
+          ref={(el) => (elementsRef.current[5] = el)}
+        >
+          Get Started
+        </button>
         {message && <p className="fade-in">{message}</p>}
       </header>
     </div>
   );
 }
+
 
 function App() {
   return (
