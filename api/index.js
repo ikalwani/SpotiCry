@@ -18,8 +18,10 @@ const uri =
 const client = new MongoClient(uri);
 
 app.get("/api/user-data", async (req, res) => {
+  console.time("Fetch User Data");
   try {
     await client.connect();
+    console.log("Connected to database");
     const db = client.db("spoticry");
     const users = db.collection("users");
 
@@ -27,6 +29,7 @@ app.get("/api/user-data", async (req, res) => {
     console.log("Received request for email:", email);
 
     const user = await users.findOne({ email: email });
+    console.log("Fetched user:", user);
 
     if (user) {
       res.json(user.entries);
@@ -42,7 +45,9 @@ app.get("/api/user-data", async (req, res) => {
     });
   } finally {
     await client.close();
+    console.timeEnd("Fetch User Data");
   }
 });
+
 
 module.exports = app;
