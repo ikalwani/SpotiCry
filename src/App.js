@@ -1,4 +1,3 @@
-// src/App.js
 import React from "react";
 import { useState, useEffect, useRef } from "react";
 import logo from "./spoticry.png";
@@ -9,6 +8,7 @@ import Dashboard from "./Dashboard";
 import { useAuth0 } from "@auth0/auth0-react";
 import LoginButton from "./Components/LoginButton.js";
 import Visualize from "./Visualize";
+import ProtectedRoute from "./ProtectedRoute";
 
 function Home() {
   const [message, setMessage] = useState("");
@@ -100,8 +100,22 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/visualize" element={<Visualize />} />
+      <Route
+        path="/dashboard"
+        element={
+          <ProtectedRoute>
+            <Dashboard />
+          </ProtectedRoute>
+        }
+      />
+      <Route
+        path="/visualize"
+        element={
+          <ProtectedRoute>
+            <Visualize />
+          </ProtectedRoute>
+        }
+      />
     </Routes>
   );
 }
