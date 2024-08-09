@@ -3,6 +3,7 @@ const { MongoClient } = require("mongodb");
 const cors = require("cors");
 
 const app = express();
+
 app.use(
   cors({
     origin: ["https://spoticry.vercel.app", "http://localhost:3000"],
@@ -23,18 +24,18 @@ app.get("/api/user-data", async (req, res) => {
     const users = db.collection("users");
 
     const email = req.query.email;
-    console.log("Received request for email:", email); // Add this line
+    console.log("Received request for email:", email);
 
     const user = await users.findOne({ email: email });
 
     if (user) {
       res.json(user.entries);
     } else {
-      console.log("User not found for email:", email); // Add this line
+      console.log("User not found for email:", email);
       res.status(404).json({ message: "User not found" });
     }
   } catch (error) {
-    console.error("Error in /api/user-data:", error); // Modify this line
+    console.error("Error in /api/user-data:", error);
     res
       .status(500)
       .json({ message: "Error fetching user data", error: error.toString() });
