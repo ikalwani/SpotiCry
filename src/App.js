@@ -82,7 +82,7 @@ function Home() {
         >
           <li>Log your crying episodes</li>
           <li>Analyze your emotional patterns</li>
-          <li>Gain insights into your emotional wellbeing</li>
+          <li>Gain insights into your emotional well-being</li>
           <li>Visualize your "Year in Tears"</li>
         </ul>
         <p
