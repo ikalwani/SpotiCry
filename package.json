@@ -26,6 +26,7 @@
     "build": "DISABLE_ESLINT_PLUGIN=true react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "vercel-build": "npm run build",
     "server": "nodemon api/index.js",
     "dev": "concurrently \"npm run server\" \"npm start\""
   },
