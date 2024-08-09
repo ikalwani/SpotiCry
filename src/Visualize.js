@@ -45,33 +45,32 @@ const Visualize = () => {
     }
   }, [isAuthenticated, user]);
 
-  const fetchUserData = async (email) => {
-    try {
-      const response = await fetch(
-        `http://localhost:5001/api/user-data?email=${email}`
-      );
-      const data = await response.json();
-      if (response.ok) {
-        const uniqueData = data.filter(
-          (entry, index, self) =>
-            index ===
-            self.findIndex(
-              (e) =>
-                e.timestamp === entry.timestamp &&
-                e.date === entry.date &&
-                e.intensity === entry.intensity &&
-                e.trigger.toString() === entry.trigger.toString() &&
-                e.location === entry.location
-            )
-        );
-        setUserData(uniqueData);
-      } else {
-        console.error("Server responded with an error:", data);
-      }
-    } catch (error) {
-      console.error("Error fetching data:", error);
+const fetchUserData = async (email) => {
+  try {
+    const response = await fetch(`/api/user-data?email=${email}`);
+    if (!response.ok) {
+      const text = await response.text();
+      console.error("Server responded with an error:", response.status, text);
+      throw new Error(`HTTP error! status: ${response.status}`);
     }
-  };
+    const data = await response.json();
+    const uniqueData = data.filter(
+      (entry, index, self) =>
+        index ===
+        self.findIndex(
+          (e) =>
+            e.timestamp === entry.timestamp &&
+            e.date === entry.date &&
+            e.intensity === entry.intensity &&
+            e.trigger.toString() === entry.trigger.toString() &&
+            e.location === entry.location
+        )
+    );
+    setUserData(uniqueData);
+  } catch (error) {
+    console.error("Error fetching data:", error);
+  }
+};
 
   const prepareChartData = () => {
     if (!userData) return null;
@@ -312,7 +311,7 @@ const Visualize = () => {
             </div>
           </div>
         ) : (
-          <div class="no-data-message">
+          <div className="no-data-message">
             No data available yet. Your new data is either being processed and
             will be available shortly, or you haven't recorded any entries yet!
           </div>

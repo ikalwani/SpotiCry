@@ -23,19 +23,24 @@ app.get("/api/user-data", async (req, res) => {
     const users = db.collection("users");
 
     const email = req.query.email;
+    console.log("Received request for email:", email); // Add this line
+
     const user = await users.findOne({ email: email });
 
     if (user) {
       res.json(user.entries);
     } else {
+      console.log("User not found for email:", email); // Add this line
       res.status(404).json({ message: "User not found" });
     }
   } catch (error) {
-    res.status(500).json({ message: "Error fetching user data" });
+    console.error("Error in /api/user-data:", error); // Modify this line
+    res
+      .status(500)
+      .json({ message: "Error fetching user data", error: error.toString() });
   } finally {
     await client.close();
   }
 });
 
-const PORT = process.env.PORT || 5001;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+module.exports = app;
