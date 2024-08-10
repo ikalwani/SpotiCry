@@ -215,7 +215,7 @@ const Visualize = () => {
           <h1>Your SpotiCry Year in Review</h1>
           <p>
             Explore your emotional journey through data and insights. Note that
-            new data entries will take up to 15 minutes to show.
+            new data entries will take up to 24 hours to show.
           </p>
         </div>
         {userData ? (
