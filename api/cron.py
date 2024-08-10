@@ -11,7 +11,6 @@ from bson.objectid import ObjectId
 import os
 import json
 
-# Set up logging
 logging.basicConfig(level=logging.INFO)
 
 class handler(BaseHTTPRequestHandler):
@@ -98,17 +97,15 @@ def main():
             'https://www.googleapis.com/auth/spreadsheets',
             'https://www.googleapis.com/auth/drive'
         ]
-        creds_json = json.loads(os.environ.get('GOOGLE_CREDS_JSON'))
+        creds_json = json.loads(os.environ.get("/Users/ishakalwani/Desktop/spoticry/secret-key/key.json", scopes=scopes))
         creds = ServiceAccountCredentials.from_json_keyfile_dict(creds_json, scopes=scopes)
         file = gspread.authorize(creds)
         workbook = file.open("spoticry")
         sheet = workbook.sheet1
 
-        # MongoDB setup
-        uri = os.environ.get('MONGODB_URI')
+        uri = os.environ.get('mongodb+srv://ikalwani:ishika26@spoticry.mty7fkz.mongodb.net/?retryWrites=true&w=majority&appName=SpotiCry')
         client = MongoClient(uri, server_api=ServerApi('1'))
 
-        # Get all data
         data = sheet.get_all_values()
         headers = data.pop(0)
         
