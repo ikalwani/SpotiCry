@@ -37,7 +37,7 @@ const Dashboard = () => {
         <h2>Welcome to Your Dashboard</h2>
         <p>
           Need to log your tears? Fill the form below and we will take care of
-          the rest.
+          the rest. (Note: Make sure that you use the same email address to fill the form as your email address that you logged in with.)
         </p>
         <div className="google-form-container">
           <iframe
